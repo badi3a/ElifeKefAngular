@@ -1,3 +1,4 @@
+import { Product } from './../model/product';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
-
+  public product: Product;
   constructor() { }
 
   ngOnInit(): void {
+    this.product= new Product();
+    console.log(this.product)
   }
-
+  saveProduct(){
+    console.log(this.product)
+    //add product in the list
+  }
 }
