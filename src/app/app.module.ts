@@ -7,6 +7,9 @@ import { TestComponent } from './test/test.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ListProductComponent } from './list-product/list-product.component';
+import { ProductFormComponent } from './product-form/product-form.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { ListProductComponent } from './list-product/list-product.component';
     TestComponent,
     HeaderComponent,
     FooterComponent,
-    ListProductComponent
+    ListProductComponent,
+    ProductFormComponent,
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
