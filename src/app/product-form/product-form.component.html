@@ -24,7 +24,8 @@
     <input type="number"  [(ngModel)]="product.quantity" name="quantity" class="form-control">
   </div>
   <br>
-  <button  [disabled]="f.invalid" class="btn btn-success" (click)="saveProduct()">
+  <button  [disabled]="f.invalid" class="btn btn-success"
+  (click)="saveProduct()">
     save
   </button>
 </form>
