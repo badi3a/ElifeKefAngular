@@ -13,7 +13,10 @@ export class ListProductComponent implements OnInit {
   constructor(private productService:ProductService) { }
   ngOnInit(): void {
     this.title='New App';
-    this.list= this.productService.list;
+   this.productService.getListProduct().subscribe(
+    (data: Product[])=> this.list= data
+   );
+
   }
   incrementLike(product:Product){
     let i = this.list.indexOf(product);
@@ -26,5 +29,13 @@ export class ListProductComponent implements OnInit {
     if(i!=-1){
         this.list[i].quantity--;
     }
+  }
+  delete(product:Product){
+    this.productService.deleteProduct(product.id).subscribe(
+      ()=>{
+        let i= this.list.indexOf(product)
+        this.list.splice(i,1)
+       }
+    );
   }
 }

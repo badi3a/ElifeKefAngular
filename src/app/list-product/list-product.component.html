@@ -9,15 +9,21 @@
           price: {{product.price}} $<br>
           quantity: {{product.quantity}}
         </p>
-        <button (click)="incrementLike(product)" class="btn btn-primary">
+        <button (click)="incrementLike(product)" class="btn btn-sm btn-primary">
           like {{product.nbrLike}}
         </button>
-        <button [disabled]="product.quantity==0" id="buy" (click)="buy(product)" class="btn btn-warning">
+        <button [disabled]="product.quantity==0" id="buy" (click)="buy(product)" class="btn btn-sm btn-warning">
           buy {{product.quantity}}
         </button>
         <p *ngIf="product.quantity==0">
           out of stock
         </p>
+        &nbsp;
+        <button class="btn btn-sm btn-danger" (click)="delete(product)">
+          delete
+        </button>     &nbsp;
+        <a class="btn btn-sm btn-success"
+        [routerLink]="['/update',product.id]">update</a>
       </div>
     </div>
   </div>
